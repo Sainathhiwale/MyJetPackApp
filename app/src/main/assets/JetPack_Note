@@ -1,0 +1,53 @@
+
+create the jetpack compose project
+1. select file anc click new project.
+2. select the empty compose activity
+3. give the app name.
+4. Select the build configuration language, like Kotlin DSL gradle.kts
+
+after created the project the set android compileSdk version as 34 if you faced the metadata issue.
+
+to Check the kotlin version and compatibility we need to create the module how to create
+1. click on app folder select module
+2. give the module name as Test or any you like to give.
+3. created class make main function and run the hello world program.
+4. check compiler successfully display hello world on console.
+
+# Task Create the Card view on screen
+1.create CreateBizCard method with @Composable annotation.
+2. take surface UI component to display the screen
+  surface: In Jetpack Compose, a Surface is a fundamental building block for creating and styling UI elements.
+  It acts as a container that defines the visual appearance and behavior of its content.
+  syntax: Surface(
+               modifier = Modifier.fillMaxSize(), // Fills the entire screen
+               color = Color.LightGray, // Sets the background color
+               shape = RoundedCornerShape(8.dp), // Defines rounded corners
+               elevation = 4.dp // Adds a slight shadow for depth
+           ) {
+               Text(text = "Hello, Jetpack Compose!", modifier = Padding(16.dp)) // Content within the Surface
+           }
+#.What is compose?
+ Jetpack Compose is Android’s modern toolkit for building native UI. It simplifies and accelerates UI
+ development on Android. It is a part of the Jetpack suite of libraries.
+
+#Why we need Compose?
+ 1. It’s Declarative
+ Jetpack Compose is a declarative UI framework, which means you describe your view without relying on mutation and more traditional imperative programming concepts.
+
+ 2. It’s Independent
+ Compose is a library that isn’t coupled to the operating system. This is a major advantage for developers.
+
+ 3. Less and reusable code
+ The Compose library is built in such a way that you can build up your UI in small, reusable building blocks rather than at the Fragment or Activity level. That composability increases code reuse and clarity.
+
+ 4. Interoperable
+ Compose is built to interoperate with your existing app. You can embed compose UIs within Views or Views within Compose. You can add as little as a single button to a screen, or keep that custom view you’ve created in a now Compose screen.
+
+ 5. Jetpack Integration
+ Compose is built to integrate with the Jetpack libraries you already know and love. With integration with Navigation, Paging, LiveData (or Flow/RxJava), ViewModel and Hilt, compose works with your existing architecture
+
+ 6. 100% Kotlin
+ written in Kotlin programming language
+
+ 7. One codebase
+ No need to write XML anymore.
