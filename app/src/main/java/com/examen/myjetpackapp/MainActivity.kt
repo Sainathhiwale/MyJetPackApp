@@ -3,26 +3,59 @@ package com.examen.myjetpackapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
+import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.examen.myjetpackapp.ui.theme.MyJetPackAppTheme
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+
+//https://www.jetpackcompose.net/compose-layout-row-and-column
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MyJetPackAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-
-                }
-            }
+            simpleRow()
+            simpleColumn()
         }
     }
+
+    @Preview
+    @Composable
+    private fun simpleColumn() {
+       Column(modifier = Modifier.fillMaxHeight().fillMaxWidth(),
+            verticalArrangement = Arrangement.SpaceEvenly,
+            horizontalAlignment  =  Alignment.CenterHorizontally
+        ) {
+            Text(text ="Column Text 1", Modifier.background(Color.Red))
+            Text(text ="Column Text 2", Modifier.background(Color.Red))
+            Text(text ="Column Text 2", Modifier.background(Color.Red))
+        }
+    }
+
+    @Preview
+    @Composable
+    fun simpleRow(){
+        Row(Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.Top,
+            horizontalArrangement = Arrangement.SpaceEvenly) {
+            Text(text ="Row Text 1", Modifier.background(Color.Blue))
+            Text(text ="Row Text 2", Modifier.background(Color.Blue))
+            Text(text ="Row Text 2", Modifier.background(Color.Blue))
+        }
+    }
+
+
 }
 
