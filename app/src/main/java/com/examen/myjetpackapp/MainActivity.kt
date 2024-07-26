@@ -26,14 +26,15 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            simpleRow()
-            simpleColumn()
+          /*  simpleRow()
+            simpleColumn()*/
+            LayoutContainer()
         }
     }
 
     @Preview
     @Composable
-    private fun simpleColumn() {
+    private fun ColumnArrangement() {
        Column(modifier = Modifier.fillMaxHeight().fillMaxWidth(),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment  =  Alignment.CenterHorizontally
@@ -46,7 +47,7 @@ class MainActivity : ComponentActivity() {
 
     @Preview
     @Composable
-    fun simpleRow(){
+    fun RowArrangement(){
         Row(Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.Top,
             horizontalArrangement = Arrangement.SpaceEvenly) {
@@ -55,7 +56,20 @@ class MainActivity : ComponentActivity() {
             Text(text ="Row Text 2", Modifier.background(Color.Blue))
         }
     }
+    @Composable
+    fun LayoutContainer(){
+        Column {
 
+            RowArrangement()
+            ColumnArrangement()
+        }
+    }
+
+    @Preview(showSystemUi = true, showBackground = true, backgroundColor = 0xFFFFFFFF)
+    @Composable
+    fun LayoutPreview(){
+        LayoutContainer()
+    }
 
 }
 
