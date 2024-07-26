@@ -110,3 +110,106 @@ to Check the kotlin version and compatibility we need to create the module how t
    (such as the status bar and navigation bar) behaves within your Compose-based application.
 
  link: https://www.jetpackcompose.net/jetpack-compose-preview
+
+ Jetpack compose
+ link: https://www.jetpackcompose.net/jetpack-compose-introduction
+ 1.What is compose?
+ Jetpack Compose is Android’s modern toolkit for building native UI. It simplifies and accelerates UI development on Android. It is a part of the Jetpack suite of libraries.
+
+ 2.Why we need Compose?
+ 1. It’s Declarative
+ Jetpack Compose is a declarative UI framework, which means you describe your view without relying on mutation and more traditional imperative programming concepts.
+
+ 2. It’s Independent
+ Compose is a library that isn’t coupled to the operating system. This is a major advantage for developers.
+
+ 3. Less and reusable code
+ The Compose library is built in such a way that you can build up your UI in small, reusable building blocks rather than at the Fragment or Activity level. That composability increases code reuse and clarity.
+
+ 4. Interoperable
+ Compose is built to interoperate with your existing app. You can embed compose UIs within Views or Views within Compose. You can add as little as a single button to a screen, or keep that custom view you’ve created in a now Compose screen.
+
+ 5. Jetpack Integration
+ Compose is built to integrate with the Jetpack libraries you already know and love. With integration with Navigation, Paging, LiveData (or Flow/RxJava), ViewModel and Hilt, compose works with your existing architecture
+
+ 6. 100% Kotlin
+ written in Kotlin programming language
+
+ 7. One codebase
+ No need to write XML anymore.
+
+ 3.How to show the screen layout and ui in jetpack compose project
+
+ @Preview is jetpack annotation which is use to show the ui preview in android studio ui screen.
+
+ example:
+ @Preview(showBackground = true, showSystemUi = true)
+
+ showSystemUi: showSystemUi is a parameter in Jetpack Compose's Window class, used to control the system UI visibility in an Android app. It allows you to customize how the system UI (such as the status bar and navigation bar) behaves within your Compose-based application.
+ link: https://www.jetpackcompose.net/jetpack-compose-preview
+ 4. What is Surface?
+
+ surface: In Jetpack Compose, a Surface is a fundamental building block for creating and styling UI elements.
+   It acts as a container that defines the visual appearance and behavior of its content.
+   syntax: Surface(
+                modifier = Modifier.fillMaxSize(), // Fills the entire screen
+                color = Color.LightGray, // Sets the background color
+                shape = RoundedCornerShape(8.dp), // Defines rounded corners
+                elevation = 4.dp // Adds a slight shadow for depth
+            ) {
+                Text(text = "Hello, Jetpack Compose!", modifier = Padding(16.dp)) // Content within the Surface
+            }
+ 5. Imperative programming vs Declarative programming
+ Imperative UI
+ This is the most common paradigm. It involves having a separate prototype/model of the application’s UI. This design focuses on the how rather than the what. A good example is XML layouts in Android. We design the widgets and components which are then rendered for the user to see and interact with.
+
+ Imperative UI sample code:
+
+ Xml:
+
+    <TextView
+         android:id="@+id/tv_name"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+      />
+ Java:
+
+ public class MainActivity extends AppCompatActivity {
+
+     TextView tvName;
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_checkbox);
+         tvName = findViewById(R.id.tv_name);
+         tvName.setText("Hello World");
+     }
+ }
+
+ Declarative UI
+ This pattern is an emerging trend that allows the developers to design the user interface based on the data received. This on the other hand focuses on the what. This design paradigm makes use of one programming language to create an entire application.
+
+
+ class MainActivity : ComponentActivity() {
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContent {
+             Text(text = "Hello World")
+         }
+     }
+ }
+ Advantages of JetPack Compose
+ It is very fast and offers a smooth performance.
+ It’s simple to learn.
+ It is possible to interoperate with an imperative approach.
+ Offers a better way to implement loose coupling principles.
+ It is 100% made in Kotlin which makes it a modern approach in Android development.
+ 6. what is composable
+ In Jetpack Compose, a composable is a fundamental building block for creating user interfaces. It's a Kotlin function annotated with @Composable that describes the UI elements and their appearance.
+
+ 7. What is Jetpack Compose Modifiers?
+   - To modify size, display, appearance and behaviour of the composable.
+   - Size, background colors, paddings, click Handlers
+   - Composition over the inheritance.
+   - can be chained and sequence matters here.
+ link: https://www.jetpackcompose.net/jetpack-compose-modifiers
