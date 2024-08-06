@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MyJetPackApp</string>
     <string name="title_activity_text_basics">TextBasicsActivity</string>
+    <string name="title_activity_circle">CircleActivity</string>
 </resources>

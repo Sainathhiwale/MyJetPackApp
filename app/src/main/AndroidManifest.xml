@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyJetPackApp"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:exported="false"
@@ -19,6 +20,11 @@
             android:theme="@style/Theme.MyJetPackApp" />
         <activity
             android:name=".TextBasicsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_text_basics"
+            android:theme="@style/Theme.MyJetPackApp" />
+        <activity
+            android:name=".CircleActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.MyJetPackApp">
